@@ -6,11 +6,11 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name='ocp-modules',
     version='0.1.0',
-    packages=['ocp_modules'],
+    packages=setuptools.find_packages(),
     license='GNU General Public License',
     author="Jonas Schlagenhauf",
     author_email="schlagenhauf_github@mailbox.org",
-    description="A library to asseble OCPs from modules",
+    description="A library to assemble OCPs from modules",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/schlagenhauf/ocp-modules",
