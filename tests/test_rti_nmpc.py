@@ -43,7 +43,8 @@ def test_get_metadata():
 
     # test dynamic values before first iteration
     assert metadata.residuals.size == 0
-    assert metadata.solutions.size == 0
+    assert metadata.solution_states.size == 0
+    assert metadata.solution_controls.size == 0
 
     # test dynamic values after first iteration
     parameter_values = {'x_cur': x0,
@@ -53,5 +54,6 @@ def test_get_metadata():
     controller.step(nlp_parameters)
     metadata = controller.get_metadata()
     assert metadata.residuals.shape == (1,)
-    assert metadata.solutions.shape == (num_states * (horizon_length+1) + num_controls * horizon_length, 1)
+    assert metadata.solution_states.shape == (num_states, horizon_length+1, 1)
+    assert metadata.solution_controls.shape == (num_controls, horizon_length, 1)
     assert metadata.computation_times.shape == (1,)
