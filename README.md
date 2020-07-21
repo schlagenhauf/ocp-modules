@@ -54,4 +54,4 @@ Run examples via:
 
 ## Documentation
 
-The documentation can be found *here* (coming soon)
+The documentation is generated via Sphinx and can be found ~~here~~ *(coming soon)*
