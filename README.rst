@@ -2,7 +2,8 @@ ocp-modules
 ===========
 
 This library provides a set of modules to assemble optimal control problems (OCPs) by generating
-symbolic expressions based on `CasADi <https://web.casadi.org/>`_.
+symbolic expressions based on `CasADi <https://web.casadi.org/>`_. The documentation is generated
+via Sphinx and can be found `here <docs/build/html/index.html>`_.
 
 Installation
 ------------
@@ -61,8 +62,3 @@ Run examples via:
     .. code-block:: bash
 
         ./examples/<folder>/<script>.py
-
-Documentation
-=============
-
-The documentation is generated via Sphinx and can be found `here <docs/build/html/index.html>`_.
