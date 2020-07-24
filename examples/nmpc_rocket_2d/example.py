@@ -3,8 +3,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from Rocket import Rocket as Model
-from plot_rocket import plotRocket
+from .Rocket import Rocket as Model
+from .plot_rocket import plotRocket
 
 from ocp_modules.modules import OcpVars
 from ocp_modules.modules import OcpParams
