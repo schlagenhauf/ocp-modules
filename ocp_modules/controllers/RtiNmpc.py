@@ -139,7 +139,7 @@ class RtiNmpc (ControllerBase):
             solution_control_data[:,:,i] = np.reshape(res['x'][-self.NU * self.M:], (self.NU, self.M), order='F')
 
         meta['solution_states'] = xr.DataArray(solution_state_data, dims=('state', 'control_state_horizon', 'control_step'))
-        meta['solution_controls'] = xr.DataArray(solution_control_data, dims=('controls', 'control_action_horizon', 'control_step'))
+        meta['solution_controls'] = xr.DataArray(solution_control_data, dims=('control', 'control_action_horizon', 'control_step'))
 
         # here one could also add lagrange multipliers to the dataset
         meta['computation_times'] = xr.DataArray(self.durations, dims=('control_step'))
