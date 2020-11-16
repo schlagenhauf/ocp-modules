@@ -2,8 +2,7 @@ ocp-modules
 ===========
 
 This library provides a set of modules to assemble optimal control problems (OCPs) by generating
-symbolic expressions based on `CasADi <https://web.casadi.org/>`_. The documentation is generated
-via Sphinx and can be found `here <docs/build/html/index.html>`_.
+symbolic expressions based on casadi_. 
 
 Installation
 ------------
@@ -43,10 +42,8 @@ For Developers
 A note regarding CasADi
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Casadi can make use of proprietary solvers such as
-`HSL MA57 <http://www.hsl.rl.ac.uk/catalogue/ma57.html>`_. Follow the instructions
-`here <https://github.com/casadi/casadi/wiki/Obtaining-HSL>`_ to install them and modify the solver
-options to use the built-in default.
+Casadi can make use of proprietary solvers such as HSL_MA57_ Follow the instructions
+obtaining_HSL_ to install them and modify the solver options to use the built-in default.
 
 Common issues with HSL solvers:
 
@@ -62,3 +59,9 @@ Run examples via:
     .. code-block:: bash
 
         ./examples/<folder>/<script>.py
+
+
+.. _casadi: https://web.casadi.org/
+.. _sphinx: docs/build/html/index.html
+.. _HSL_MA57: http://www.hsl.rl.ac.uk/catalogue/ma57.html
+.. _obtaining_HSL: https://github.com/casadi/casadi/wiki/Obtaining-HSL>
