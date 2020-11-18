@@ -1,7 +1,7 @@
 import time
 import numpy as np
 
-from wiggly.controllers.core.ControllerBase import ControllerBase
+from ocp_modules.controllers.ControllerBase import ControllerBase
 
 
 class Lqr (ControllerBase):
