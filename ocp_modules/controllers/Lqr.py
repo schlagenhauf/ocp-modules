@@ -7,16 +7,18 @@ from ocp_modules.controllers.ControllerBase import ControllerBase
 class Lqr (ControllerBase):
     """Linear Quadratic Regulator
 
-    The LQR exploits a special case of optimal control problems: If the cost function is quadratic and
-    the model linear an optimal solution can be found for all initial states. Consequentially this
-    solution can be computed offline (i.e. in advance), since we don't have to wait for the current
-    state to wander by to compute the optimal control law at this point.
+    The LQR exploits a special case of optimal control problems: If the cost function is
+    quadratic and the model linear an optimal solution can be found for all initial states.
+    Consequentially this solution can be computed offline (i.e. in advance), since we don't have
+    to wait for the current state to wander by to compute the optimal control law at this point.
 
-    There are four different variations of the core LQR formulation: finite-horizon time-continuous,
-    infinite-horizon time-continuous, finite-horizon time-discrete and infinite-horizon time-discrete.
+    There are four different variations of the core LQR formulation: finite-horizon
+    time-continuous, infinite-horizon time-continuous, finite-horizon time-discrete and
+    infinite-horizon time-discrete.
 
-    The fourth variant is of interest, because real systems usually run for an unspecified / potentially
-    unlimited time (infinite horizon) and are implemented on a sampling system (time-discrete).
+    The fourth variant is of interest, because real systems usually run for an unspecified /
+    potentially unlimited time (infinite horizon) and are implemented on a sampling system
+    (time-discrete).
     """
 
     def __init__(self, A, B, Q, R):
