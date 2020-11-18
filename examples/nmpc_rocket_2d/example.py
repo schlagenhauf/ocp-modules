@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 
-import matplotlib.pyplot as plt
-import numpy as np
-
-from .Rocket import Rocket as Model
-from .plot_rocket import plotRocket
-
-from ocp_modules.modules import OcpVars
-from ocp_modules.modules import OcpParams
-from ocp_modules.modules import DirectMultipleShootingConstraints, InitialValueConstraints
-from ocp_modules.modules import TrackingCosts
-from ocp_modules.controllers.Nmpc import Nmpc
 from ocp_modules.utils.mse import mse
+from ocp_modules.controllers.Nmpc import Nmpc
+from ocp_modules.modules import TrackingCosts
+from ocp_modules.modules import DirectMultipleShootingConstraints, InitialValueConstraints
+from ocp_modules.modules import OcpParams
+from ocp_modules.modules import OcpVars
+#from plot_rocket import plotRocket
+from Rocket import Rocket as Model
+import numpy as np
+import matplotlib
+matplotlib.use('TkAgg')
+import matplotlib.pyplot as plt
 
 
 # constants
@@ -61,7 +61,7 @@ w0 = np.array([-10.0, 0.0, 10, 0, 0, 0, 0, 0.1])
 control_ref = np.zeros((num_controls, Nsim+horizon_length))
 state_ref = np.zeros((num_states, Nsim+horizon_length+1))
 np.random.seed(5)
-state_ref[:2 ,:] = np.ones((2,Nsim+horizon_length+1)) * 100
+state_ref[:2, :] = np.ones((2, Nsim+horizon_length+1)) * 100
 
 
 # simulate
@@ -91,20 +91,20 @@ mseNlp = mse(wSim[:2, :], state_ref[:2, :-horizon_length])
 print('NLP position MSE: %f' % mseNlp)
 
 # plotting
-t = np.arange(0,Nsim+1) * sampling_time
+t = np.arange(0, Nsim+1) * sampling_time
 #plotRocket(wSim, state_ref, rocketColor='blue')
-#plt.figure()
+# plt.figure()
 #plt.plot(wSim[0,:], wSim[1,:])
-#plt.show()
+# plt.show()
 
 
 plt.figure()
-plt.subplot(4,1,1)
-plt.plot(t, wSim[0:2,:].T)
-plt.subplot(4,1,2)
-plt.plot(t, wSim[2:4,:].T)
-plt.subplot(4,1,3)
-plt.plot(t, wSim[3,:].T)
-plt.subplot(4,1,4)
-plt.plot(t, wSim[4,:].T)
+plt.subplot(4, 1, 1)
+plt.plot(t, wSim[0:2, :].T)
+plt.subplot(4, 1, 2)
+plt.plot(t, wSim[2:4, :].T)
+plt.subplot(4, 1, 3)
+plt.plot(t, wSim[3, :].T)
+plt.subplot(4, 1, 4)
+plt.plot(t, wSim[4, :].T)
 plt.show()
