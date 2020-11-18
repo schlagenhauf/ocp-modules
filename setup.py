@@ -5,7 +5,7 @@ with open("README.rst", "r") as fh:
 
 setuptools.setup(
     name='ocp-modules',
-    version='0.1.0',
+    use_scm_version=True,
     packages=setuptools.find_packages(),
     license='GNU General Public License',
     author="Jonas Schlagenhauf",
@@ -19,6 +19,7 @@ setuptools.setup(
         "License :: OSI Approved :: GNU General Public License (GPL)",
         "Operating System :: OS Independent",
     ],
+    setup_requires=['setuptools_scm'],
     install_requires=[
         'numpy',
         'casadi',
