@@ -2,7 +2,7 @@ import casadi as ca
 
 from ocp_modules.utils.quaternion import quaternionProduct as qProd
 from ocp_modules.utils.runge_kutta_4 import rk4step
-from .ModelBase import ModelBase
+from ModelBase import ModelBase
 
 
 # a 2D rocket with thrust and torque controls
