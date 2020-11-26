@@ -1,6 +1,7 @@
 import numpy as np
 from ocp_modules.modules import AffineConstraint
 from casadi.tools import struct_symSX, entry
+from casadi import Function
 
 
 def test_affine_constraint():
@@ -19,3 +20,4 @@ def test_affine_constraint():
     assert (lb == (lower_bound - affine_coefficient)).all()
     assert (ub == (upper_bound - affine_coefficient)).all()
     assert '@1=2, [(@1*x_0), (@1*x_1)]' == str(g)
+    assert np.equal(Function('g_fun', [var['x']], [g])([2,2]), [4,4]).all()
