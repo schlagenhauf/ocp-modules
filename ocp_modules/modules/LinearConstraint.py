@@ -1,10 +1,9 @@
-import numpy as np
-from casadi import *
-from casadi.tools import struct_symSX, entry
+from casadi import mtimes
+
 
 def gen(var, A, lba, uba):
 
-    g = A @ var
+    g = mtimes(A, var)
     constrList = [(g, lba, uba)]
 
     return constrList
